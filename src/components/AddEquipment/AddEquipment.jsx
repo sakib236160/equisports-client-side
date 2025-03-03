@@ -60,8 +60,9 @@ const AddEquipment = () => {
                 <input className="p-2 border rounded" type="text" name="customization" placeholder="Enter Customization Options" />
                 <input className="p-2 border rounded" type="text" name="processingTime" placeholder="Enter Processing Time" />
                 <input className="p-2 border rounded" type="number" name="stockStatus" placeholder="Enter Stock Status" />
-                <input className="p-2 border rounded bg-gray-200" type="email" name="userEmail" placeholder="User Email" readOnly />
-                <input className="p-2 border rounded bg-gray-200" type="text" name="userName" placeholder="User Name" readOnly />
+                <input className="p-2 border rounded bg-gray-200" type="email" name="userEmail" placeholder="User Email"  />
+                <input className="p-2 border rounded bg-gray-200" type="text" name="userName" placeholder="User Name" />
+                {/* readOnly */}
             </div>
             <button className="mt-6 w-full bg-[#D2B48C] text-black py-2 rounded text-lg font-semibold">
                 Add Equipment
