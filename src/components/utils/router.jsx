@@ -4,6 +4,7 @@ import Home from "../Home/Home";
 import AllSportsEquipment from "../AllSportsEquipment/AllSportsEquipment";
 import AddEquipment from "../AddEquipment/AddEquipment";
 import MyEquipment from "../MyEquipment/MyEquipment";
+import UpdateEquipment from "../UpdateEquipment/UpdateEquipment";
 
 const router = createBrowserRouter([
     {
@@ -24,8 +25,13 @@ const router = createBrowserRouter([
             },
             {
                 path:"/my-equipment",
-                element:<MyEquipment></MyEquipment>
+                element:<MyEquipment></MyEquipment>,
+                loader:()=>fetch('http://localhost:5000/equipment')
             },
+            {
+                path:"/update-equipment",
+                element:<UpdateEquipment></UpdateEquipment>
+            }
         ]
     }
 ])
