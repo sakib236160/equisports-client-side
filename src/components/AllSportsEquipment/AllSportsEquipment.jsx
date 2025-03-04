@@ -1,8 +1,11 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+// import { authContext } from "../AuthProvider/AuthProvider";
 
 
 const AllSportsEquipment = () => {
+    // const {user} = useContext(authContext);
+    // console.log(user);
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
 

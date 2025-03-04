@@ -1,7 +1,10 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { authContext } from "../AuthProvider/AuthProvider";
 
 const ProductDetails = () => {
+    const contextValue = useContext(authContext);
+    console.log(contextValue);
     const { id } = useParams();
     const navigate = useNavigate();
     const [product, setProduct] = useState(null);
