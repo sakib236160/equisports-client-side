@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 const AllSportsEquipment = () => {
@@ -39,9 +39,9 @@ const AllSportsEquipment = () => {
                             <td className="px-4 py-2">{product.category}</td>
                             <td className="px-4 py-2">${product.price}</td>
                             <td className="px-4 py-2">
-                                {/* <Link to={`/product-details/${product._id}`}> */}
-                                    <button className="bg-blue-500 text-white px-4 py-2 rounded">View Details</button>
-                                {/* </Link> */}
+                            <Link to={`/product-details/${product._id}`}>
+    <button className="bg-blue-500 text-white px-4 py-2 rounded">View Details</button>
+</Link>
                             </td>
                         </tr>
                     ))}

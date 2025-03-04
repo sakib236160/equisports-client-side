@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 
-const MyEquipmentCard = ({equipment}) => {
+const MyEquipmentCard = ({equipment,equipments,setEquipments}) => {
 
     const handleDelete =_id=>{
         console.log(_id);
@@ -28,6 +28,8 @@ const MyEquipmentCard = ({equipment}) => {
                         text: "Your equipment has been deleted.",
                         icon: "success"
                       });
+                      const remaining = equipments.filter(equip => equip._id !== _id);
+                      setEquipments(remaining);
                 }
             })
             }

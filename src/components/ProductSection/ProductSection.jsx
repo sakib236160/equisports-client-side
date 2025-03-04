@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const ProductSection = () => {
     const [products, setProducts] = useState([]);
@@ -28,7 +29,9 @@ const ProductSection = () => {
                         <h3 className="text-lg font-semibold mt-2">{product.name}</h3>
                         <p className="text-sm text-gray-500">{product.category}</p>
                         <p className="text-lg font-bold">${product.price}</p>
-                        <button className="bg-blue-500 text-white px-4 py-2 mt-2 rounded">View Details</button>
+                        <button className="bg-blue-500 text-white px-4 py-2 mt-2 rounded">
+    <Link to={`/product-details/${product._id}`}>View Details</Link>
+</button>
                     </div>
                 ))}
             </div>

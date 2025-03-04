@@ -5,6 +5,7 @@ import AllSportsEquipment from "../AllSportsEquipment/AllSportsEquipment";
 import AddEquipment from "../AddEquipment/AddEquipment";
 import MyEquipment from "../MyEquipment/MyEquipment";
 import UpdateEquipment from "../UpdateEquipment/UpdateEquipment";
+import ProductDetails from "../ProductDetails/ProductDetails";
 
 const router = createBrowserRouter([
     {
@@ -32,6 +33,11 @@ const router = createBrowserRouter([
                 path:"/update-equipment/:id",
                 element:<UpdateEquipment></UpdateEquipment>,
                 loader:({params})=> fetch(`http://localhost:5000/equipment/${params.id}`)
+            },
+            {
+                path: "/product-details/:id",
+                element: <ProductDetails></ProductDetails>,
+                loader: ({ params }) => fetch(`http://localhost:5000/equipment/${params.id}`)
             }
         ]
     }
