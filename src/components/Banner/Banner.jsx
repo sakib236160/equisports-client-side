@@ -1,89 +1,62 @@
-
-import { useState } from "react";
-import { FiChevronLeft, FiChevronRight, FiSun, FiMoon } from "react-icons/fi";
-import { motion } from "framer-motion";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/effect-fade";
+import "swiper/css/navigation";
+import { EffectFade, Navigation, Autoplay } from "swiper/modules";
 
 const slides = [
   {
     id: 1,
-    image: "https://i.ibb.co.com/fdgMZMj1/banner01.jpg",
-    title: "Professional Football",
-    subtitle: "FREE WORKOUTS NOW",
+    img: "https://i.ibb.co.com/fdgMZMj1/banner01.jpg",
+    title: "Career Counseling",
+    description: "Guiding you towards the right career path.",
   },
   {
     id: 2,
-    image: "https://i.ibb.co.com/JwwC5Vj4/banner02.webp",
-    title: "Elite Basketball",
-    subtitle: "IMPROVE YOUR GAME",
+    img: "https://i.ibb.co.com/JwwC5Vj4/banner02.webp",
+    title: "Expert Advice",
+    description: "Get insights from industry experts.",
   },
   {
     id: 3,
-    image: "https://i.ibb.co.com/FLtkvzvG/banner03.jpg",
-    title: "Run Like a Pro",
-    subtitle: "JOIN THE RACE",
+    img: "https://i.ibb.co.com/FLtkvzvG/banner03.jpg",
+    title: "Build Your Future",
+    description: "Plan your career with confidence.",
   },
 ];
 
 const Banner = () => {
-  const [current, setCurrent] = useState(0);
-  const [darkMode, setDarkMode] = useState(false);
-
-  const prevSlide = () => {
-    setCurrent(current === 0 ? slides.length - 1 : current - 1);
-  };
-
-  const nextSlide = () => {
-    setCurrent(current === slides.length - 1 ? 0 : current + 1);
-  };
-
   return (
-    <div className={`relative w-full h-screen ${darkMode ? "bg-gray-900" : "bg-white"}`}>
-      {slides.map((slide, index) => (
-        <div
-          key={slide.id}
-          className={`absolute inset-0 transition-opacity duration-700 ${
-            index === current ? "opacity-100" : "opacity-0"
-          }`}
-        >
-          <motion.img
-            src={slide.image}
-            alt={slide.title}
-            className="w-full h-full object-cover"
-            initial={{ y: -50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 1 }}
-          />
-          <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center">
-            <p className="text-lg font-semibold">{slide.subtitle}</p>
-            <h2 className="text-4xl md:text-6xl font-bold">{slide.title}</h2>
-            <button className="mt-4 bg-yellow-400 px-6 py-2 text-black font-semibold rounded-md">Shop Now</button>
-          </div>
-        </div>
-      ))}
-
-      {/* Navigation Buttons */}
-      <button
-        onClick={prevSlide}
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white text-black p-3 rounded-full shadow-md"
+    <div className="relative h-screen max-w-screen-xl mx-auto mt-6">
+      <Swiper
+        effect={"fade"}
+        navigation
+        autoplay={{ delay: 4000, disableOnInteraction: false }}
+        modules={[EffectFade, Navigation, Autoplay]}
+        className="h-full"
       >
-        <FiChevronLeft size={24} />
-      </button>
-      <button
-        onClick={nextSlide}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white text-black p-3 rounded-full shadow-md"
-      >
-        <FiChevronRight size={24} />
-      </button>
-
-      {/* Dark Mode Toggle */}
-      <button
-        onClick={() => setDarkMode(!darkMode)}
-        className="absolute bottom-4 left-4 bg-black text-white p-3 rounded-full"
-      >
-        {darkMode ? <FiSun size={24} /> : <FiMoon size={24} />}
-      </button>
+        {slides.map((slide) => (
+          <SwiperSlide key={slide.id}>
+            <div className="relative h-full">
+              <img
+                className="object-cover w-full h-full rounded-lg"
+                src={slide.img}
+                alt={slide.title}
+              />
+              <div className="absolute inset-0 bg-black opacity-50"></div>
+              <div className="absolute inset-0 flex items-center justify-center text-center">
+                <div>
+                  <h2 className="text-7xl font-bold text-white">{slide.title}</h2>
+                  <p className="text-2xl text-gray-300 mt-4">{slide.description}</p>
+                </div>
+              </div>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
   );
 };
 
 export default Banner;
+
