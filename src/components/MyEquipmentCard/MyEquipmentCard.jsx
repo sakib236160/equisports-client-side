@@ -54,23 +54,12 @@ const MyEquipmentCard = ({equipment,equipments,setEquipments}) => {
         
         {/* Action Buttons */}
         <div className="flex space-x-2">
-          {/* <button className="bg-gray-200 p-2 rounded">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12H9m0 0h6m-6 0V9m0 3v3" />
-            </svg>
-          </button> */}
           <Link to={`/update-equipment/${_id}`}>
           <button className="bg-blue-500 text-white p-2 rounded">
-            {/* <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
-            </svg> */}
             Update
           </button>
           </Link>
           <button onClick={()=>handleDelete(_id)} className="bg-red-500 text-white p-2 rounded">
-            {/* <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg> */}
             Delete
           </button>
         </div>
