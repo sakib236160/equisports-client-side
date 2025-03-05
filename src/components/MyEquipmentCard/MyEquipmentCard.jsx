@@ -16,7 +16,7 @@ const MyEquipmentCard = ({equipment,equipments,setEquipments}) => {
             confirmButtonText: "Yes, delete it!"
           }).then((result) => {
             if (result.isConfirmed) {
-            fetch(`http://localhost:5000/equipment/${_id}`,{
+            fetch(`https://equisports-server-side-tau.vercel.app/equipment/${_id}`,{
                 method:'DELETE'
             })
             .then(res=>res.json())

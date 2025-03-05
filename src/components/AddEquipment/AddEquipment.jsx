@@ -25,7 +25,7 @@ const AddEquipment = () => {
         };
 
         // Send data to the server
-        fetch("http://localhost:5000/equipment", {
+        fetch("https://equisports-server-side-tau.vercel.app/equipment", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

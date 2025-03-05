@@ -9,7 +9,7 @@ const AllSportsEquipment = () => {
   const [isAscending, setIsAscending] = useState(true); // for price sorting
 
   useEffect(() => {
-    fetch("http://localhost:5000/all-products")
+    fetch("https://equisports-server-side-tau.vercel.app/all-products")
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);

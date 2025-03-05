@@ -8,7 +8,7 @@ const ProductSection = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch("http://localhost:5000/limited-products") 
+        fetch("https://equisports-server-side-tau.vercel.app/limited-products") 
             .then(res => res.json())
             .then(data => {
                 setProducts(data);

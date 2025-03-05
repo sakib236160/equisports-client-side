@@ -5,6 +5,7 @@ import { PhoneIcon } from "lucide-react";
 import { motion } from "framer-motion";
 
 const Navbar = () => {
+  
   const { user, handleLogout } = useContext(authContext);
   const [isHovered, setIsHovered] = useState(false);
   return (

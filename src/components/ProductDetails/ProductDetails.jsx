@@ -7,12 +7,12 @@ const ProductDetails = () => {
   console.log(contextValue);
   const { id } = useParams();
   const navigate = useNavigate();
-  
+
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/equipment/${id}`)
+    fetch(`https://equisports-server-side-tau.vercel.app/equipment/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);

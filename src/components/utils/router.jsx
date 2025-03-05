@@ -31,19 +31,19 @@ const router = createBrowserRouter([
             {
                 path:"/my-equipment",
                 element: <PrivateRoute><MyEquipment></MyEquipment></PrivateRoute>,
-                loader:()=>fetch('http://localhost:5000/equipment')
+                loader:()=>fetch('https://equisports-server-side-tau.vercel.app/equipment')
             },
             {
                 path:"/update-equipment/:id",
                 element:<UpdateEquipment></UpdateEquipment>,
-                loader:({params})=> fetch(`http://localhost:5000/equipment/${params.id}`)
+                loader:({params})=> fetch(`https://equisports-server-side-tau.vercel.app/equipment/${params.id}`)
             },
             {
                 path: "/product-details/:id",
                 element:<PrivateRoute>
                      <ProductDetails></ProductDetails>
                 </PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/equipment/${params.id}`)
+                loader: ({ params }) => fetch(`https://equisports-server-side-tau.vercel.app/equipment/${params.id}`)
             },
             {
                 path:"/login",

@@ -114,7 +114,7 @@ const Login = () => {
             </div>
             <p className="text-right text-white text-sm mt-2">
               <NavLink
-                to={`/forget-password?email=${encodeURIComponent(email)}`}
+                // to={`/forget-password?email=${encodeURIComponent(email)}`}
                 className="hover:underline"
               >
                 Forgot Password?

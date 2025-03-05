@@ -24,7 +24,7 @@ const UpdateEquipment = () => {
         };
 
         // Send update request to the server
-        fetch(`http://localhost:5000/equipment/${_id}`, {
+        fetch(`https://equisports-server-side-tau.vercel.app/equipment/${_id}`, {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(updateEquipment)
