@@ -8,20 +8,20 @@ const slides = [
   {
     id: 1,
     img: "https://i.ibb.co.com/fdgMZMj1/banner01.jpg",
-    title: "Career Counseling",
-    description: "Guiding you towards the right career path.",
+    title: "Basketball Gear",
+    description: "Premium basketballs, shoes, and accessories for all players.",
   },
   {
     id: 2,
     img: "https://i.ibb.co.com/JwwC5Vj4/banner02.webp",
-    title: "Expert Advice",
-    description: "Get insights from industry experts.",
+    title: "Football Gear",
+    description: "Top-notch footballs, shoes, and accessories for matches.",
   },
   {
     id: 3,
     img: "https://i.ibb.co.com/FLtkvzvG/banner03.jpg",
-    title: "Build Your Future",
-    description: "Plan your career with confidence.",
+    title: " Cricket Equipment",
+    description: " High-quality cricket gear tailored for all levels.",
   },
 ];
 
